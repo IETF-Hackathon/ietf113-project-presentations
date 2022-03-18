@@ -12,6 +12,6 @@ To be added as a member, please be sure to:
 * enable two factor authentication [(2FA)](https://docs.github.com/en/github/authenticating-to-github/securing-your-account-with-two-factor-authentication-2fa)
 * send your GitHub user name to [hackathon-chairs@ietf.org](mailto:hackathon-chairs@ietf.org)
 
-Please do this at your earliest convenience. **DO NOT WAIT** until just before project presentations start or your request may be lost in the chaos.
+**DO NOT WAIT** until just before project presentations start or your request may be lost in the chaos.
 
 For more info on the Hackathon, including the complete and most up to date agenda, please see the [Hackathon Wiki](https://trac.ietf.org/trac/ietf/meeting/wiki/113hackathon).
