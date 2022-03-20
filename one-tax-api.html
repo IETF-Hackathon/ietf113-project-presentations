@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>IETF Hackathon - One Tax API </title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+      div.left-column  { width: 49%; float: left; }
+      div.right-column { width: 49%; float: right; }
+
+      div.right-column ~ p { clear: both; }
+      div.right-column ~ ul { clear: both; }
+      div.my-footer {
+        border-top: 1px solid #ccc;
+        font-size: 10pt;
+        text-align: center;
+        position: fixed;
+        bottom: 0px;
+        left: 0px;
+        height: 30px;
+        width: 100%;
+      }
+      
+      div.my-footer p {
+        margin-top: 10px;
+        height: 30px;
+      }
+
+      body { font-family: 'Droid Serif'; }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle
+
+# IETF Hackathon
+      
+IETF 113
+      
+19-20 March 2022
+
+Online
+
+      
+---
+
+# Hackathon Plan
+
+One Tax API
+  - No RFC's yet, but is related to previous RFC's for forward secrecy
+  - Relevant to web monetization
+  - Try out and understand McTiny
+    - a sync flood resistant forward secrecy preserving protocol
+    - Public domain code https://mctiny.org/software.html
+    - USENIX 2020 presentation 
+    - https://www.usenix.org/conference/usenixsecurity20/presentation/bernstein
+        
+Deploy the code, review the paper, take measurements
+        
+<div class="my-footer"><p>IETF Hackathon - One Tax API </p></div>       
+---
+
+# What got done
+        
+What you achieved? (key results)
+  - Deployed on and ran the code on the cloud using Ubuntu 20.04 and Rocky Linux 8
+  - Started on simplified examples of McEliece enrcyption
+  - https://github.com/OneTaxApi/McEliece
+
+<!-- Installation steps on Ubuntu
+apt-get update
+apt-get install build-essential pandoc xsltproc wget git
+wget https://mctiny.org/software/mctiny-20200804.tar.gz
+tar -xf mctiny-20200804.tar.gz
+cd mctiny-20200804/
+make
+./mctiny-master state
+./mctiny-server state 127.0.0.1 12345 &
+./mctiny-client state/public/* 127.0.0.1 12345
+
+Installation steps on Rocky Linux
+
+dnf -y install wget tar python3-devel
+dnf -y groupinstall "Development tools"
+wget https://mctiny.org/software/mctiny-20200804.tar.gz
+tar -xf mctiny-20200804.tar.gz 
+cd mctiny-20200804/
+python3 mctiny.py > mctiny.h
+make
+./mctiny-master state
+./mctiny-server state 127.0.0.1 12345 &
+./mctiny-client state/public/* 127.0.0.1 12345
+
+Testing from Rocky Linux to Ubuntu also works as described
+in the README
+-->
+
+<!--
+	References found
+	https://raw.githubusercontent.com/rexemin/McEliece/master/McElieceReport.pdf
+	https://ipnpr.jpl.nasa.gov/progress_report2/42-44/44N.PDF
+	https://courses.cs.ut.ee/MTAT.07.022/2015_spring/uploads/Main/sander-report-s15.pdf
+        https://ipnpr.jpl.nasa.gov/progress_report2/42-44/44N.PDF
+        https://github.com/shanecurran/node-mceliece
+	http://en.wikipedia.org/wiki/McEliece_cryptosystem
+	https://stackoverflow.com/questions/42274010/mceliece-encryption-decryption-algorithm
+	https://digitalcommons.csbsju.edu/cgi/viewcontent.cgi?article=1019&context=honors_theses
+	https://eprint.iacr.org/2006/162
+	https://en.wikipedia.org/wiki/Binary_Goppa_code
+	https://github.com/myDisconnect/mceliece-security
+        https://www.hyperelliptic.org/tanja/students/m_marcus/whitepaper.pdf
+        https://eprint.iacr.org/2014/112
+	https://github.com/christianepeters/wild
+	https://surface.syr.edu/cgi/viewcontent.cgi?article=1846&context=honors_capstone
+-->
+
+<div class="my-footer"><p>IETF Hackathon - One Tax API </p></div>       
+---
+        
+# What we learned
+
+<Lessons learned from this hackathon>
+        - Implementation seems to work, but needs further examination
+        - Needs real world testing for sync flood resistance
+	- Needs real world testing for forward privacy
+        
+<div class="my-footer"><p>IETF Hackathon - One Tax API </p></div>      
+        
+---
+ # Wrap up
+  ---  
+        
+        
+.left-column[ 
+        #### Team members:
+        
+        - Benson Muite
+        
+        ]
+.right-column[ 
+        #### Other links:
+        
+        - https://mctiny.org
+        - https://github.com/OneTaxApi/McEliece
+        
+        ]
+
+.left-column[ 
+        #### First timers @ IETF/Hackathon:
+        
+	-
+
+        ]
+.right-column[ 
+        #### Notes and contacts:
+        
+        - benson dot muite at emailplus dot org
+
+        ]
+
+<div class="my-footer"><p>IETF Hackathon - One Tax API </p></div>
+        
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
