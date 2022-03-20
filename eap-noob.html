@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>IETF Hackathon - EAP-NOOB</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+      div.left-column  { width: 49%; float: left; }
+      div.right-column { width: 49%; float: right; }
+
+      div.right-column ~ p { clear: both; }
+      div.right-column ~ ul { clear: both; }
+      div.my-footer {
+        border-top: 1px solid #ccc;
+        font-size: 10pt;
+        text-align: center;
+        position: fixed;
+        bottom: 0px;
+        left: 0px;
+        height: 30px;
+        width: 100%;
+      }
+      
+      div.my-footer p {
+        margin-top: 10px;
+        height: 30px;
+      }
+
+      body { font-family: 'Droid Serif'; }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle
+
+# IETF Hackathon
+      
+IETF 113
+      
+19-20 March 2022
+
+EAP-NOOB/EAP-UTE
+
+Jan-Frederik "Janfred" Rieckers
+      
+---
+
+# Hackathon Plan
+
+Implement EAP-NOOB into ESP-IDF for ESP32
+      - RFC 9140
+      - https://github.com/espressif/esp-idf
+
+EAP-NOOB server implementation already existet from a Masters Project at the University Bremen
+
+<div class="my-footer"><p>IETF Hackathon - EAP-NOOB </p></div>       
+---
+
+# What got done
+
+- First functioning code for EAP-NOOB
+    - mainly JSON/message parsing and checking correct format
+- not yet functional, key handling/cryptography completely missing
+    - Main reason: First had to understand the EAP-Stack of ESP-IDF
+    
+
+<div class="my-footer"><p>IETF Hackathon - EAP-NOOB </p></div>       
+---
+
+# Side-Work
+
+- EAP-UTE (draft-rieckers-emu-eap-ute) improved
+    - Tries to achieve the same goals as EAP-NOOB with different message format and protocol flow
+
+<div class="my-footer"><p>IETF Hackathon - EAP-NOOB </p></div>       
+---
+# Links/Contact
+
+- Code available in fork here: https://github.com/namib-project/esp-idf/tree/namib/eap-noob_eap-ute
+- Contact: Jan-Frederik "Janfred" Rieckers
+  - rieckers@dfn.de
+<div class="my-footer"><p>IETF Hackathon - EAP-NOOB </p></div>
+        
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
