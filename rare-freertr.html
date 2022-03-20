@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>IETF Hackathon - RARE/freeRtr </title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+      div.left-column  { width: 49%; float: left; }
+      div.right-column { width: 49%; float: right; }
+
+      div.right-column ~ p { clear: both; }
+      div.right-column ~ ul { clear: both; }
+      div.my-footer {
+        border-top: 1px solid #ccc;
+        font-size: 10pt;
+        text-align: center;
+        position: fixed;
+        bottom: 0px;
+        left: 0px;
+        height: 30px;
+        width: 100%;
+      }
+      
+      div.my-footer p {
+        margin-top: 10px;
+        height: 30px;
+      }
+
+      body { font-family: 'Droid Serif'; }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle
+
+# IETF Hackathon<br />RARE/freeRtr
+      
+IETF 113
+      
+19-20 March 2022
+
+Online
+
+      
+---
+
+# What is RARE/freeRtr?
+
+**[freeRtr](https://www.freertr.net/)**:
+  Free/Open Source router IP/MPLS control plane
+  - lightweight Java implementation
+  - supports many IETF protocols
+
+**[RARE](https://rare.freertr.net/)**:
+  _Router for Academia, Research, and Education_
+  - funded by EU as part of G&Eacute;ANT/GN4-3
+  - add data planes (P4/Tofino, DPDK, XDP/BPF...)
+  - enhance usability for use cases in actual (R&E) networks
+  - support R&E users with special needs! **Examples:**
+
+    - PolKA (see lightning talk in IRTF [PANRG on Thu](https://datatracker.ietf.org/meeting/113/materials/agenda-113-panrg-00)!)
+    - HEP traffic flow marking using IPv6 Flow Label <br />(see Shawn McKee's talk in [_HEPiX topics in IETF_](https://indico.cern.ch/event/924996/#8-ipv6-topics-in-ietf))
+---
+
+# Hackathon Plan
+
+Bring the nascent RARE/freeRtr developer community together!
+- Create automation tools based on freeRtr NETCONF API
+- Investigate alignment with standard YANG modules (IETF/OpenConfig)
+- Streaming telemetry from hardware (Tofino) counters and integrate freeRtr telemetry to external visualization tools with a robust telemetry collection agent queuing write information into K,V database
+- Nix packaging for Intel’s open-source IPDK (on top of the Tofino SDE)
+- Switchdev support (For Spectrumv2/v3 ASIC)
+- Elaborate and propose IPFIX/Netflow/sFlow/PSAMP design
+- Add new Tofino counters
+- Leverage NETCONF to provide FW-UI(?)
+- Add Polka/TE GUI via NextUI automating NETCONF commands
+- AMT interworking
+- BIER interworking
+- MCAST-MENU update from freeRtr
+- Set up a scrubbing solution as reference design for DDOS with WEDGE100BF32X
+- (M)PolKA testing
+        
+<How you planned to solve it?>
+        
+<div class="my-footer"><p>IETF Hackathon - RARE/freeRtr </p></div>       
+---
+
+# What got done
+        
+- P4/Tofino implementation of unicast RPF
+- Inter-op testing against IETF DHCPv4 server led to bug fix
+        
+<div class="my-footer"><p>IETF Hackathon - RARE/freeRtr </p></div>       
+---
+        
+# What we learned
+
+- freeRtr feature development workflow
+  - configuration, tests, P4 dataplane, CP/DP interface, ...
+- uRPF more complex in IPv6 than in IPv4 due to ND integration
+         
+<div class="my-footer"><p>IETF Hackathon - RARE/freeRtr </p></div>      
+---
+  
+# uRPF: per-interface configuration
+        
+<!-- .left[![Left-aligned image](https://upload.wikimedia.org/wikipedia/commons/b/b8/Muito_fixe.png)] --> 
+        
+ <img src="rare-freertr/urpf-interface-config.png"
+      alt="uRPF per-interface configuration" width="640" height="360">
+
+<div class="my-footer"><p>IETF Hackathon - RARE/freeRtr </p></div>       
+        
+---
+# New P4 LPM table for uRPF Checks
+        
+<!-- .left[![Left-aligned image](https://upload.wikimedia.org/wikipedia/commons/b/b8/Muito_fixe.png)] --> 
+        
+ <img src="rare-freertr/2022-03-20-102459_1920x1080_scrot.png"
+      alt="new P4 table for IPv6 uRPF checks" width="640" height="360">
+- (yes, we also support IPv4 ;-)
+
+<div class="my-footer"><p>IETF Hackathon - RARE/freeRtr </p></div>       
+        
+---
+ # Wrap up
+  ---  
+        
+        
+.left-column[ 
+        #### Team members:
+        
+        - Csaba Mate (mc36)
+        - Carmen Misa
+        - Rafael Guimarães
+        - Everson Scherrer Borges
+        - Simon Leinen
+
+        
+        ]
+.right-column[ 
+        #### Other links:
+        - https://www.freerrt.net/
+        - https://rare.freerrt.net/
+        - https://demo.freerrt.net/
+        
+        ]
+
+.left-column[ 
+        #### First timers @ IETF/Hackathon:
+        
+        - Csaba Mate (mc36)
+        - Carmen Misa
+        - Rafael Guimarães
+        - Everson Scherrer Borges
+        ]
+.right-column[ 
+        #### Notes and contacts:
+        
+        -
+        -
+        ]
+
+<div class="my-footer"><p>IETF Hackathon - RARE/freeRtr </p></div>
+        
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
